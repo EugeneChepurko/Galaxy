@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Galaxy
 {
     class Star
-    {
+    {     
         public string Name { get; set; }
         public double Temperature { get; set; }
         public double Age { get; set; }
@@ -22,6 +22,17 @@ namespace Galaxy
         public Star(string name, double temp, double age, double radius, double weight)
         {
 
+        }
+        public void ShowStarListPlanet()
+        {
+            Star myStar = new Star();
+            foreach (var planet in myStar.Planets)
+            {
+                Console.WriteLine(value: $"Name - {planet.Name}\nAge - {planet.Age} years\nRadius - {planet.Radius} km\nTemperature - {planet.Temperature}C\nWeight - {planet.Weight} kg");
+                Console.WriteLine("-------------------------------------");
+            }
+            Console.WriteLine($"Planet count - {myStar.Planets.Count}");
+            Console.WriteLine($"This 56ft planet his temp -> {myStar.Planets[0].Temperature}");
         }
     }
 }
