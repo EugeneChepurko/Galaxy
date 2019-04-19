@@ -9,7 +9,9 @@ namespace Galaxy
 {
     class Planet
     {
-        Star myStar = new Star();
+        Random random = new Random();
+        ///Star myStar = new Star();  
+        ///System system = new System();
         public string Name { get; set; }
         public double Age { get; set; }
         public double Weight { get; set; }
@@ -18,7 +20,7 @@ namespace Galaxy
 
         public Planet()
         {
-            myStar.Create();
+            ///system.AddStar(myStar);
         }
         public Planet(string name, double age, double weight, uint radius, int temperature)
         {
@@ -29,10 +31,9 @@ namespace Galaxy
             Temperature = temperature;
         }
         //Create planet
-        public void Create()
+        public Planet Create()
         {
-            int index = 0;
-            Random random = new Random();
+            ///int index = 0;
             Planet planet = new Planet();
 
             planet.Name = "Unnamed planet";
@@ -41,45 +42,29 @@ namespace Galaxy
             planet.Temperature = random.Next(-273, 1000000);
             planet.Weight = random.NextDouble() * (int.MaxValue - 1);
 
-            if (index != -1 && index >= 1)
-            {
-                if (planet.Temperature == myStar.Planets[index - 1].Temperature)
-                {
-                    planet.Temperature = random.Next(-273, 1000000);
-                    Thread.Sleep(random.Next(10, 60));
-                }
-            }
-            // adding planet to star
-            myStar.AddPlanet(planet);
-            index++;
-            Thread.Sleep(random.Next(10, 40));
+            return planet;
+            ////if (index != -1 && index >= 1)
+            ////{
+            ////    if (planet.Temperature == myStar.Planets[index - 1].Temperature)
+            ////    {
+            ////        planet.Temperature = random.Next(-273, 1000000);
+            ////        Thread.Sleep(random.Next(10, 60));
+            ////    }
+            ////}
+            ////// adding planet to star
+            ////myStar.AddPlanet(planet);
+            //////system.AddStarToSystem(myStar);
+            ////index++;
+            ////Thread.Sleep(random.Next(10, 40));
         }
 
-        private void ShowPlanet(Planet planet)
+        public void ShowPlanet(Planet planet)
         {
             Console.WriteLine($"Name - {planet.Name}\nAge - {planet.Age} years\nRadius - {planet.Radius} km\nTemperature - {planet.Temperature}C\nWeight - {planet.Weight} kg");
         }
-
-        public void ShowStarListPlanet()
+        public void ShowPlanet()
         {
-            foreach (Planet planet in myStar.Planets)
-            {
-                Console.WriteLine(value: $"Star - {myStar.Name}\nName - {planet.Name}\nAge - {planet.Age} years\nRadius - {planet.Radius} km\nTemperature - {planet.Temperature}C\nWeight - {planet.Weight} kg");
-                Console.WriteLine("-------------------------------------");
-            }
-            Console.WriteLine($"Planet count - {myStar.Planets.Count}");
-            Console.WriteLine($"This 56ft planet his temp -> {myStar.Planets[0].Temperature}");
-        }
-
-        public void ShowPlanetWithLowTemp()
-        {
-            for (int i = 0; i < myStar.Planets.Count; i++)
-            {
-                if (myStar.Planets[i].Temperature < 500000)
-                {
-                    Console.WriteLine($"Planet found!\nIndex {i}\nTemperature = {myStar.Planets[i].Temperature}");
-                }
-            }
-        }
+            Console.WriteLine($"Name - {Name}\nAge - {Age} years\nRadius - {Radius} km\nTemperature - {Temperature}C\nWeight - {Weight} kg");
+        }    
     }
 }

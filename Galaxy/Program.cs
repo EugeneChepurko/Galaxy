@@ -11,16 +11,48 @@ namespace Galaxy
     {
         static void Main(string[] args)
         {
-            Planet planet = new Planet();
+            System system = new System();
+            Thread.Sleep(10);
+            Star star = new Star();
+            star.Planets.Count();
+       
+            // add star to system
+            system.AddStar(star);
 
-            //Count of planet
-            for (int i = 0; i < 3; i++)
+            // create a planet
+            Planet planet = new Planet();
+            for (int i = 0; i < 10; i++)
             {
-                planet.Create();
+                star.AddPlanet(planet.Create());
             }
-            
-            //planet.ShowPlanetWithLowTemp();
-            planet.ShowStarListPlanet();
+            //show
+            //star.ShowListPlanet();
+            //star.ShowPlanetWithLowTemp();
+            system.ShowStars();
+
+            //------------------------------------------
+            //Planet planet = new Planet();
+            //Count of planet
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    planet.Create();
+            //}
+
+            ////planet.ShowPlanetWithLowTemp();
+            //planet.ShowStarListPlanet();
+
+            // ====================================== NEW
+            //System system = new System();
+            //Star star = new Star();
+            //system.CreateSystem();
+            //star.CreateStar();
+            //system.ShowStars();
+            //system.ShowSystem();
+
+
+            //System s = new System();
+
+            //s.ShowSystem();
         }  
     }
 }
