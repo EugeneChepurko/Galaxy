@@ -16,7 +16,6 @@ namespace Galaxy
             Star star = new Star();
             star.Planets.Count();
        
-
             // add star to system
             system.AddStar(star);
 
@@ -30,30 +29,6 @@ namespace Galaxy
             //star.ShowListPlanet();
             //star.ShowPlanetWithLowTemp();
             system.ShowStars();
-
-            //------------------------------------------
-            //Planet planet = new Planet();
-            //Count of planet
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    planet.Create();
-            //}
-
-            ////planet.ShowPlanetWithLowTemp();
-            //planet.ShowStarListPlanet();
-
-            // ====================================== NEW
-            //System system = new System();
-            //Star star = new Star();
-            //system.CreateSystem();
-            //star.CreateStar();
-            //system.ShowStars();
-            //system.ShowSystem();
-
-
-            //System s = new System();
-
-            //s.ShowSystem();
         }  
     }
 }

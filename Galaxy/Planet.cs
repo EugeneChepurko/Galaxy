@@ -10,8 +10,6 @@ namespace Galaxy
     class Planet
     {
         Random random = new Random();
-        ///Star myStar = new Star();  
-        ///System system = new System();
         public string Name { get; set; }
         public double Age { get; set; }
         public double Weight { get; set; }
@@ -20,7 +18,7 @@ namespace Galaxy
 
         public Planet()
         {
-            ///system.AddStar(myStar);
+            
         }
         public Planet(string name, double age, double weight, uint radius, int temperature)
         {
