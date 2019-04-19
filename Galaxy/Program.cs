@@ -16,6 +16,7 @@ namespace Galaxy
             Star star = new Star();
             star.Planets.Count();
        
+
             // add star to system
             system.AddStar(star);
 
